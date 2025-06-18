@@ -17,8 +17,9 @@ class AccountDataSourceEanDb extends AccountDataSource {
         'accept': 'application/json',
       },
     );
-    print(response.body);
 
-    return ResponseDto<AccountDto>.fromJson(response.body).toResponse<Account>();
+    return ResponseDto<AccountDto>.fromJson(
+      response.body,
+    ).toResponse<Account>();
   }
 }

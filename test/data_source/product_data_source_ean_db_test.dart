@@ -18,8 +18,7 @@ void main() {
   test('fetch product success', () async {
     final productDataSource = ProductDataSourceEanDb();
     final response = await productDataSource.barcodeLookup(
-      barcode: '7896051135425',
-      authToken: 'TOKEN_HERE',
+        barcode: '7896051135425',
     );
 
     expect(response, isNotNull);
@@ -31,9 +30,7 @@ void main() {
   test('fetch product error barcode', () async {
     final productDataSource = ProductDataSourceEanDb();
     final response = await productDataSource.barcodeLookup(
-      barcode: '7896051135425Err',
-      authToken: 'TOKEN_HERE',
-    );
+        barcode: '7896051135425Err',);
 
     expect(response, isNotNull);
     expect(response.data, isNull);

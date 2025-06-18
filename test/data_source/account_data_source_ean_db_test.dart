@@ -5,7 +5,6 @@ void main() {
   test('fetch account details with erro no token', () async {
     final accountDataSource = AccountDataSourceEanDb();
     final response = await accountDataSource.getAccount();
-
     expect(response, isNotNull);
     expect(response.data, isNull);
     expect(response.error, isNotNull);

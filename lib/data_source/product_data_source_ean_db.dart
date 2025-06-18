@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:http/http.dart' as http;
 import 'package:ms_ean_db/data/dto/dto.dart';
 import 'package:ms_ean_db/data/product.dart';
@@ -20,7 +18,6 @@ class ProductDataSourceEanDb extends ProductDataSource {
         'accept': 'application/json',
       },
     );
-    log(response.body);
 
     return ResponseDto<ProductDto>.fromJson(
       response.body,
