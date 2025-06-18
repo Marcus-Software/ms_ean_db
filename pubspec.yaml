@@ -1,0 +1,21 @@
+name: ms_ean_db
+description: "A Dart package to access the EAN database API for product information."
+version: 0.1.0
+homepage:
+
+environment:
+  sdk: ^3.8.1
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^1.4.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+flutter:
+
+
