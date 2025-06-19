@@ -23,6 +23,19 @@ class Product {
   String toString() {
     return 'Product(barcode: $barcode, titles: $titles, categories: $categories, manufacturer: $manufacturer, relatedBrands: $relatedBrands, images: $images, metadata: $metadata)';
   }
+
+  Map<String, dynamic> toMap() {
+    return {
+      'barcode': barcode,
+      'barcodeDetails': barcodeDetails?.toMap(),
+      'titles': titles.toMap(),
+      'categories': categories.map((e) => e.toMap()).toList(),
+      'manufacturer': manufacturer?.toMap(),
+      'relatedBrands': relatedBrands.map((e) => e.toMap()).toList(),
+      'images': images.map((e) => e.toMap()).toList(),
+      'metadata': metadata,
+    };
+  }
 }
 
 class BarcodeDetails {
@@ -39,6 +52,14 @@ class BarcodeDetails {
   @override
   String toString() {
     return 'BarcodeDetails{type: $type, description: $description, country: $country}';
+  }
+
+  Map<String, dynamic> toMap() {
+    return {
+      'type': type,
+      'description': description,
+      'country': country,
+    };
   }
 }
 
@@ -59,6 +80,15 @@ class Image {
   String toString() {
     return 'Image{url: $url, isCatalog: $isCatalog, width: $width, height: $height}';
   }
+
+  Map<String, dynamic> toMap() {
+    return {
+      'url': url,
+      'isCatalog': isCatalog,
+      'width': width,
+      'height': height,
+    };
+  }
 }
 
 class Category {
@@ -70,6 +100,13 @@ class Category {
   @override
   String toString() {
     return 'Category{id: $id, titles: $titles}';
+  }
+
+  Map<String, dynamic> toMap() {
+    return {
+      'id': id,
+      'titles': titles.toMap(),
+    };
   }
 }
 
@@ -83,6 +120,14 @@ class Manufacturer {
   @override
   String toString() {
     return 'Manufacturer{id: $id, titles: $titles, wikidataId: $wikidataId}';
+  }
+
+  Map<String, dynamic> toMap() {
+    return {
+      'id': id,
+      'titles': titles.toMap(),
+      'wikidataId': wikidataId,
+    };
   }
 }
 
@@ -110,6 +155,10 @@ class Titles {
   @override
   String toString() {
     return 'Titles{titles: $titles}';
+  }
+
+  Map<String, String> toMap() {
+    return Map.from(titles);
   }
 }
 

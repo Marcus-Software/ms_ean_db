@@ -38,8 +38,10 @@ void main() async {
   final accountResponse = await eanDb.getAccount();
   print('Account: ${accountResponse.data.primaryEmail}'); // Account: your_nice_email@host.com
   print('Balance: ${accountResponse.data.balance}'); // Balance: 123
-  final product = await eanDb.barcodeLookup('7896051135425');
-  print('Product: ${product.titles.get('pt')}'); // Output: Product: Manteiga de Primeira Qualidade com Sal
+  final productResponse = await eanDb.barcodeLookup('7896051135425');
+  print(
+    'Product: ${productResponse.data?.titles.get('pt')}',
+  ); // Output: Product: Manteiga de Primeira Qualidade com Sal
 }
 ```
 

@@ -8,4 +8,11 @@ class ErrorData {
   String toString() {
     return 'Error(description: $description, code: $code)';
   }
+
+  Map<String, dynamic> toMap() {
+    return {
+      'description': description,
+      'code': code,
+    };
+  }
 }

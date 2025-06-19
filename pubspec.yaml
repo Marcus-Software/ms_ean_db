@@ -1,6 +1,6 @@
 name: ms_ean_db
 description: "A Dart package to access the EAN database API for product information."
-version: 0.1.0
+version: 0.2.0
 homepage: https://github.com/Marcus-Software/ms_ean_db
 
 environment:

@@ -8,4 +8,11 @@ class Account {
   String toString() {
     return 'Account(primaryEmail: $primaryEmail, balance: $balance)';
   }
+
+  Map<String, dynamic> toMap() {
+    return {
+      'primaryEmail': primaryEmail,
+      'balance': balance,
+    };
+  }
 }
